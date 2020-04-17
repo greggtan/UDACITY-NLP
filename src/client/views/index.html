@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+    </head>
+
+    <body>
+        <main>
+            <h1>Click on the button to open the dropdown menu for APIs.</h1>
+
+            <div class="dropdown">
+                <button id = "dropButton" class="dropbtn">Choose your API</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#" id = "sentimentOption">Sentiment Analysis</a>
+                    <a href="#" id = "summaryOption">Summarization</a>
+                </div>
+            </div>            
+
+            <section id="sentimentSection">
+                <input id= "mySentiment" placeholder='Write your sentiment' type="text">
+                <input id="sentimentButton" type="submit" value="submit">
+            </section>
+
+            <section id="summarySection">
+                <input id= "summaryURL" placeholder='Enter URL of website to summarize' type="text">
+                <input id="sentenceNum" placeholder = 'Enter number of sentences you want for your summary' type="text">
+                <input id="summaryButton" type="submit" value="submit">
+            </section>
+
+            <section id="resultsSection">
+                <strong>Results:</strong>
+                <div id="results"></div>
+            </section>
+
+            <h1>hello world</h1>
+        </main>
+
+
+        <script>
+                // Check that service workers are supported
+                if ('serviceWorker' in navigator) {
+                    // Use the window load event to keep the page load performant
+                    window.addEventListener('load', () => {
+                        navigator.serviceWorker.register('/service-worker.js');
+                    });
+                }
+        </script>
+
+    </body>
+</html>
